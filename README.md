@@ -3,37 +3,21 @@
   <br /> <br / >
 </p>
 
-# NdLinear Is All You Need for Representation Learning
-
-**Authors:**  Alex Reneau, Jerry Yao-Chieh Hu, Zhongfang Zhuang, Ting-Chun Liu  
+# NdLinear: next-gen replacement for nn.Linear
 
 ## Overview
 
-**NdLinear** ([paper link](https://arxiv.org/abs/2503.17353)) is an innovative linear transformation that preserves the multi-dimensional structure of data, enhancing both the representational power and parameter efficiency of neural networks. By operating along each dimension separately, it captures dependencies commonly overlooked by standard fully connected layers. NdLinear serves as an ideal foundational building block for large-scale models.
-
+You have found **NdLinear** by [Ensemble AI](https://ensemblecore.ai/). We proudly present this PyTorch module designed as an innovative linear transformation layer. 
+It preserves the multi-dimensional structure of data, enhances representational power, and is parameter-efficient. 
+Unlike conventional embedding layers, NdLinear transforms tensors across a collection of vector spaces, 
+capturing multivariate structure and dependencies typically lost in standard fully connected layers.
 
 ## Key Features
 
 - **Structure Preservation:** Retains the original data format and shape.
 - **Parameter Efficiency:** Reduces parameter count while improving performance.
 - **Minimal Overhead:** Maintains the same complexity as conventional linear layers.
-- **Easy Integration:** Seamlessly replaces existing linear layers with a multi-dimensional design.
-
-## Community Engagement
-
-We encourage the community to integrate **NdLinear** into their Hugging Face models, Kaggle projects, and GitHub repositories! By leveraging the multi-dimensional capabilities of NdLinear, you can enhance your machine learning workflows with improved representational power and efficiency.
-
-### How to Get Involved
-
-- **Hugging Face Models:** Easily enhance your Hugging Face transformers and other models by incorporating NdLinear layers. Share your models with the community on the [Hugging Face Model Hub](https://huggingface.co/models) and contribute to the open-source ecosystem.
-
-- **Kaggle Projects:** Boost your Kaggle competition submissions by replacing standard linear layers with NdLinear in your codebase. Showcase the results with the Kaggle community by sharing your notebooks and findings.
-
-- **GitHub Repositories:** Integrate NdLinear into your open-source projects. We welcome contributions and collaborations to further expand its applications and optimize performance across different domains.
-
-### Share Your Work
-
-If you use NdLinear in your projects, we would love to hear from you! Together, we can explore the vast potential and inspire innovation within the community. Join the conversation and start experimenting with NdLinear today!
+- **Flexible Integration:** Seamlessly replaces existing linear layers.
 
 ## Installation
 
@@ -42,25 +26,27 @@ To integrate NdLinear into your projects, clone the repository and install the n
 ```bash
 git clone https://github.com/ensemble-core/NdLinear.git
 cd NdLinear
-uv sync
+pip install . 
+```
+
+Alternatively, if packaged, install via pip:
+
+```bash
+pip install ndlinear
 ```
 
 ## Usage
 
-NdLinear seamlessly integrates into various neural network architectures such as CNNs, RNNs, and Transformers.
+NdLinear can be utilized in various neural network architectures such as CNNs, RNNs, and Transformers.
 
 ### Example 1: Replacing a Standard Linear Layer with NdLinear
-
-This example demonstrates how to replace a standard linear layer with an NdLinear layer to efficiently process multi-dimensional input data, such as a batch of images.
 
 ```python
 import torch
 from ndlinear import NdLinear
 
-# Input data dimensions
-input_tensor = torch.randn(32, 28, 28, 3)  # Example: batch of images (batch_size, height, width, channels)
+input_tensor = torch.randn(32, 28, 28, 3)  # Batch of images
 
-# Using NdLinear
 ndlinear_layer = NdLinear(input_dims=(28, 28, 3), hidden_size=(64, 64, 6))
 
 output = ndlinear_layer(input_tensor)
@@ -125,31 +111,50 @@ layer1 = NdLinear(input_dims=(32,), hidden_size=(64,))
 
 ## Examples of Applications
 
-We've tested NdLinear across various tasks and are excited to share some examples with you. More examples are on the way, so stay tuned!
+NdLinear is versatile and can be used in:
 
-- **Image Classification.** The `cnn_img_classification.py` script is designed for image classification using a CNN-based model on the CIFAR-10 dataset. You can execute it with the command: `python src/cnn_img_classification.py`.
-- **Time Series Forecasting.** The `ts_forecast.py` script performs time-series forecasting on ETT datasets. You can run it using: `python src/ts_forecast.py`.
-- **Text Classification.** The script `txt_classify_bert.py` utilizes BERT for text classification tasks. Start it with the command: `python src/txt_classify_bert.py`.
-- **Vision Transformers.** The `vit_distill.py` script is set up for knowledge distillation using the Vision Transformer (ViT) model. Execute it with the command: `torchrun --nnodes 1 --nproc_per_node=4 src/vit_distill.py`.
+- **Image Classification:** Run `cnn_img_classification.py`.
+- **Time Series Forecasting:** Use `ts_forecast.py`.
+- **Text Classification:** Launch `txt_classify_bert.py`.
+- **Vision Transformers:** Execute `vit_distill.py`.
 
-## Citation
+## Explore and Discover
 
-If you find NdLinear useful in your research, please cite our work:
+We invite you to visit [Ensemble AI](https://ensemblecore.ai/) and experience the innovative capabilities we offer. 
+Dive in, explore, and see how NdLinear can make a difference in your projects. We're excited to have you try it out!
 
-```bibtex
-@article{reneau2025ndlinear,
-  title={NdLinear Is All You Need for Representation Learning},
-  author={Reneau, Alex and Hu, Jerry Yao-Chieh and Zhuang, Zhongfang and Liu, Ting-Chun},
-  journal={Ensemble AI},
-  year={2025},
-  note={\url{https://arxiv.org/abs/2503.17353}}
-}
-```
+## Community Engagement
+
+Join the community and enhance your projects using NdLinear in Hugging Face, Kaggle, and GitHub.
+
+[//]: # (## Citation)
+
+[//]: # ()
+[//]: # (If you find NdLinear useful in your research, please cite our work:)
+
+[//]: # ()
+[//]: # (```bibtex)
+
+[//]: # (@article{reneau2025ndlinear,)
+
+[//]: # (  title={NdLinear Is All You Need for Representation Learning},)
+
+[//]: # (  author={Reneau, Alex and Hu, Jerry Yao-Chieh and Zhuang, Zhongfang and Liu, Ting-Chun},)
+
+[//]: # (  journal={Ensemble AI},)
+
+[//]: # (  year={2025},)
+
+[//]: # (  note={\url{https://arxiv.org/abs/2503.17353}})
+
+[//]: # (})
+
+[//]: # (```)
 
 ## Contact
 
-For questions or collaborations, please reach out to [Alex Reneau](mailto:alex@ensemblecore.ai).
+For questions or collaborations, please contact [Alex Reneau](mailto:alex@ensemblecore.ai).
 
 ## License
 
-This project is distributed under the Apache 2.0 license. You can view the [LICENSE](https://github.com/ensemble-core/NdLinear/blob/main/LICENSE) file for more details.
+This project is distributed under the Apache 2.0 license. View the [LICENSE](https://github.com/ensemble-core/NdLinear/blob/main/LICENSE) file for more details.
