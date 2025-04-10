@@ -34,6 +34,11 @@ Alternatively, if packaged, install via pip:
 ```bash
 pip install ndlinear
 ```
+Or, via conda:
+
+```bash
+conda install conda-forge::ndlinear
+```
 
 ## Usage
 
