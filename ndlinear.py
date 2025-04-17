@@ -25,7 +25,6 @@ class NdLinear(nn.Module):
         self.input_dims = input_dims
         self.hidden_size = hidden_size
         self.num_layers = len(input_dims)  # Must match since dims are equal
-        self.relu = nn.ReLU()
         self.transform_outer = transform_outer
 
         # Define transformation layers per dimension
