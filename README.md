@@ -65,7 +65,7 @@ In transformer architectures, you might need to manipulate multi-dimensional ten
 import torch 
 from ndlinear import NdLinear
 
-input_tensor = torch.randn(32, 28, 28) 
+input_tensor = torch.randn(32, 28, 28) # Input with shape : (batch_size, num_tokens, token_dim)
 
 # Reshape the input tensor for linear operations
 input_tensor = input_tensor.reshape(-1, 28, 1)  # New shape: (batch_size * num_tokens, token_dim, 1)
@@ -77,7 +77,7 @@ ndlinear_layer = NdLinear(input_dims=(28, 1), hidden_size=(32, 1))
 output = ndlinear_layer(input_tensor)
 
 # Reshape back to the original dimensions after processing
-output = output.reshape(batch_size, num_tokens, -1)  # Final output shape: (32, 28, 32)
+output = output.reshape(32, 28, -1)  # Final output shape: (32, 28, 32)
 ```
 
 This example illustrates how `NdLinear` can be integrated into transformer models by manipulating the tensor shape, thereby maintaining the structure necessary for further processing and achieving efficient projection capabilities.
