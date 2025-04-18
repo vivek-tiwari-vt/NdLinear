@@ -131,6 +131,7 @@ Dive in, explore, and see how NdLinear can make a difference in your projects. W
 ## Community Engagement
 
 Join the community and enhance your projects using NdLinear in Hugging Face, Kaggle, and GitHub.
+
 Join our Discord! https://discord.gg/6DWHusWN
 
 [//]: # (## Citation)
