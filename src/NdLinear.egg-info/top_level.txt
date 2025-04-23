@@ -1,0 +1,5 @@
+cnn_img_classification
+ts_forecast
+txt_classify_bert
+vit
+vit_distill
